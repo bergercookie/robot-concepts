@@ -26,6 +26,7 @@ TODO
 ## Usage
 
 TODO
+
 ## License
 
 robot-concepts is released under the BSD 3-clause license. See
@@ -33,7 +34,6 @@ robot-concepts is released under the BSD 3-clause license. See
 
 ## Contributing
 
-TODO
-
 TODO Instructions on the requirements to compile using this
+
 TODO Insight on the structure
