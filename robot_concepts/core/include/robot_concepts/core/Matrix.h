@@ -8,38 +8,37 @@
 
 /**
  * @file
- * @brief Pose concept declaration
+ * @brief Matrix concept declaration
  */
 
 #pragma once
 
 #include <robot_concepts/core/basics.h>
-#include <robot_concepts/core/Vector.h>
-#include <robot_concepts/core/RotationMatrix.h>
+
+#include <cstddef>
+#include <vector>
 
 namespace rc
 {
 
 /**
- * A generic Pose
- * @tparam N Type of the elements that the Pose holds (e.g., double)
+ * A 2D Matrix concept
  */
 template<typename T, Number N>
-concept bool Pose = Dimable<T> && requires (T a)
+concept bool Matrix = Sizeable<T> && requires (T a)
 {
+	/** Return num of rows of matrix */
+	{ a.rows() } -> std::size_t;
+	/** Return num of columns of matrix */
+	{ a.cols() } -> std::size_t;
+	/** Return total number of elements of matrix*/
+	{ a.size() } -> std::size_t;
 	/**
-	 * Specify whether the Pose has Covariance information
+	 * Get a flat std::vector with the contents of the matrix
+	 * The contents should be laid out row-per-row
+	 * @todo Generalise this
 	 */
-	{ a.isPDF() } -> bool;
-	/**
-	 * Translation part of Pose
-	 */
-	{ a.translation() } -> Vector<N>&;
-	/**
-	 * Rotation part of Pose - in Matrix form
-	 */
-	{ a.rotation() } -> RotationMatrix<N>&;
-
+	{ a.getAsStdVector() } -> std::vector<N>;
 };
 
 

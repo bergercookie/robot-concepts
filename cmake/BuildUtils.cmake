@@ -1,9 +1,9 @@
 ################################################################################
-#																robot-concepts																#
-#																																							#
-# Copyright (c) 2018, Individual contributors see AUTHORS.md file							#
-# See AUTHORS.md - All rights reserved.																				#
-# Released under BSD License. See details in LICENSE file											#
+#                                robot-concepts                                #
+#                                                                              #
+# Copyright (c) 2018, Individual contributors see AUTHORS.md file              #
+# See AUTHORS.md - All rights reserved.                                        #
+# Released under BSD License. See details in LICENSE file                      #
 ################################################################################
 
 #
@@ -15,6 +15,7 @@ function(add_build_options target)
 	# specify standard + compile options
 	target_compile_features(${target} INTERFACE c_std_11 cxx_std_17)
 	target_compile_options(${target} INTERFACE -Wall -Wextra -fPIC)
+	target_compile_options(${target} INTERFACE -fconcepts)
 
 	# extra flags for native arch
 	if (NOT CMAKE_CROSSCOMPILING)

@@ -47,7 +47,6 @@ set(CMAKE_INSTALL_MODULES_DIR ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
 #
 # Global cmake vars
 #
-message(STATUS "PROJECT_NAME: ${PROJECT_NAME}")
 set(ROBOT_CONCEPTS_NAMESPACE ${PROJECT_NAME})  # target-based configuration
 
 #
@@ -55,7 +54,7 @@ set(ROBOT_CONCEPTS_NAMESPACE ${PROJECT_NAME})  # target-based configuration
 #
 add_subdirectory(cmake)
 add_subdirectory(third_party)
-add_subdirectory(demo)
 add_subdirectory(robot_concepts)
 add_subdirectory(doc)
+add_subdirectory(demo)
 

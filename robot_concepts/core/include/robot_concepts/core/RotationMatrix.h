@@ -8,39 +8,20 @@
 
 /**
  * @file
- * @brief Pose concept declaration
+ * @brief Rotation Matrix concept declaration
  */
 
 #pragma once
 
-#include <robot_concepts/core/basics.h>
-#include <robot_concepts/core/Vector.h>
-#include <robot_concepts/core/RotationMatrix.h>
+#include <robot_concepts/core/Matrix.h>
 
 namespace rc
 {
 
 /**
- * A generic Pose
- * @tparam N Type of the elements that the Pose holds (e.g., double)
+ * A generic rotation matrix in N dimensions
  */
 template<typename T, Number N>
-concept bool Pose = Dimable<T> && requires (T a)
-{
-	/**
-	 * Specify whether the Pose has Covariance information
-	 */
-	{ a.isPDF() } -> bool;
-	/**
-	 * Translation part of Pose
-	 */
-	{ a.translation() } -> Vector<N>&;
-	/**
-	 * Rotation part of Pose - in Matrix form
-	 */
-	{ a.rotation() } -> RotationMatrix<N>&;
-
-};
-
+concept bool RotationMatrix = Matrix<T, N> && true;
 
 } // end of namespace rc

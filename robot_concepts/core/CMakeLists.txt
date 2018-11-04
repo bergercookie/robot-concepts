@@ -21,8 +21,8 @@ add_library(${ROBOT_CONCEPTS_NAMESPACE}::${LIB_NAME} ALIAS ${LIB_NAME})
 
 target_include_directories(
     ${LIB_NAME} INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/${LIB_NAME}>
-    $<INSTALL_INTERFACE:include/${PROJECT_NAME}/${LIB_NAME}>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/>
+    $<INSTALL_INTERFACE:include/>
 )
 
 add_build_options(${LIB_NAME})
