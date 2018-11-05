@@ -31,8 +31,6 @@ concept bool Matrix = Sizeable<T> && requires (T a)
 	{ a.rows() } -> std::size_t;
 	/** Return num of columns of matrix */
 	{ a.cols() } -> std::size_t;
-	/** Return total number of elements of matrix*/
-	{ a.size() } -> std::size_t;
 	/**
 	 * Get a flat std::vector with the contents of the matrix
 	 * The contents should be laid out row-per-row

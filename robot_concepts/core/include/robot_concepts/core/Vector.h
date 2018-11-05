@@ -22,7 +22,7 @@ namespace rc
 
 /**
  * A generic vector in N dimensions
- * @tparam N Type of the elements that they array holds
+ * @tparam N Type of the elements that the array holds
  */
 template<typename T, Number N>
 concept bool Vector = Sizeable<T> && requires (T a)
